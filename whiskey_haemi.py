@@ -1,6 +1,5 @@
 import streamlit as st
 
-!pip install streamlit-option-menu
 from option_menu import option_menu
 from streamlit_option_menu import option_menu
 from similarity import *
@@ -228,7 +227,7 @@ if choose == "Whiskey Recommend":
             user_cats_list.append('finish_유황')  
 
 
-    file_path = r'C:\Users\Playdata\Documents\DataScience\source\13_3rd_TP_1\output\whisky_preprocessing.xlsx'
+    file_path = 'data/whisky_preprocessing.xlsx'
 
     # 유사도를 위한 데이터 전처리
     preprocessor = WhiskeySimilarityChecker(file_path)
