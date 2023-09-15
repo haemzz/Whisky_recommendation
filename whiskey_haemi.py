@@ -1,6 +1,4 @@
 import streamlit as st
-
-from option_menu import option_menu
 from streamlit_option_menu import option_menu
 from similarity import *
 from PIL import Image
