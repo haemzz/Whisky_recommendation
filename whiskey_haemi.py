@@ -225,7 +225,7 @@ if choose == "Whiskey Recommend":
             user_cats_list.append('finish_유황')  
 
 
-    file_path = 'data/whisky_preprocessing.xlsx'
+    file_path = './data/whisky_preprocessing.xlsx'
 
     # 유사도를 위한 데이터 전처리
     preprocessor = WhiskeySimilarityChecker(file_path)
