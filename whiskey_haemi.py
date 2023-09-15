@@ -28,18 +28,18 @@ if choose == "Welcome":
         unsafe_allow_html=True
     )
     # 이미지 로드 및 표시
-    image_path = 'whiskey_on_the_rock.png'  # 이미지 파일의 경로를 지정해주세요
-    img = Image.open(image_path)
+    # image_path = 'whiskey_on_the_rock.png'  # 이미지 파일의 경로를 지정해주세요
+    # img = Image.open(image_path)
 
     # 이미지를 중앙에 배치하고 Streamlit으로 출력
     # 이미지를 저장할 임시 버퍼를 만듭니다.io.BytesIO()는 이미지 데이터를 임시로 저장하기 위한 바이트 스트림을 생성
-    buffered = io.BytesIO()
+    # buffered = io.BytesIO()
     # 이미지를 지정된 버퍼에 PNG형식으로 저장 이것은 PIL 라이브러리를 사용하여 이미지를 열고 저장하는 부분입니다
-    img.save(buffered, format="PNG")
+    # img.save(buffered, format="PNG")
     # buffered:이미지가 저장된 버퍼, width=400:이미지의 가로 크기를 400픽셀로 설정
     # use_column_width=True: 이미지의 너비를 현재 열의 너비에 맞게 자동 저장
     # caption='이미지 캡션 : 이미지 하단에 표시되는 캡션(설명)을 설정  
-    st.image(buffered, width=400, use_column_width=True)
+    # st.image(buffered, width=400, use_column_width=True)
     
     st.markdown(
         f'<p style="text-align: center; font-size: 20px; font-weight: bold;">위스키 추천 프로그램 소개</p>',
