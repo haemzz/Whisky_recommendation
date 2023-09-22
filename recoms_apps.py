@@ -249,7 +249,7 @@ if choose == "취향대로 위스키":
 
     # 출력개수 선택
     list_lengths = [
-        5, 10, 15, 20, 25, 30
+        5, 10, 15, 20
     ]
     
     list_length = st.selectbox("**출력 개수 선택**", list_lengths)
@@ -345,7 +345,7 @@ if choose == "비슷한 위스키 찾기":
         Result = False
 
     list_lengths = [
-        5, 10, 15, 20, 25, 30
+        5, 10, 15, 20
     ]
     
     list_length = st.selectbox("**출력 개수 선택**", list_lengths)
