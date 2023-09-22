@@ -116,6 +116,7 @@ if choose == "취향대로 위스키":
     # 체크 박스를 가로로 8개 나열
     col1_aroma, col2_aroma, col3_aroma, col4_aroma = st.columns(4)
     user_cats_list = []
+        
     # 각 열(column)에 4개씩 체크 박스 추가
     with col1_aroma:
         option1_aroma = st.checkbox('**나무**', key="aroma_option1")
@@ -237,7 +238,7 @@ if choose == "취향대로 위스키":
     preprocessor.preprocessing()
 
     user_name = 'User01' 
-    show_list = ['nameKor','가격','타입','용량','도수','국가']
+    show_list = ['위스키 이름','가격','타입','용량','도수','국가']
     
     Result = False
     
@@ -264,7 +265,7 @@ if choose == "취향대로 위스키":
             user_types = [types[selected_type]]
             user_price = (min_price, max_price) # (min_price , max_price)
             similar_shows = preprocessor.find_similar_shows(user_name, user_types, user_price, user_cats_list, top_n=list_length)
-            similar_shows.rename(columns = {'Whisky Name': '위스키 이름','type':'타입',
+            similar_shows.rename(columns = {'nameKor': '위스키 이름','type':'타입',
                                 'price':'가격','capacity':'용량', 'country':'국가','alcohol':'도수'},inplace = True)
             
             st.write(similar_shows[show_list])
