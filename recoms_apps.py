@@ -85,12 +85,12 @@ if choose == "취향대로 위스키":
 
     # 입력값이 비어있지 않은 경우에만 처리
     if min_price and max_price:
-        min_price = formatted_number(int(min_price))
-        max_price = formatted_number(int(max_price))
+        min_price = int(min_price)
+        max_price = int(max_price)
 
     
     # 입력된 최소가격과 최대가격으로 필요한 처리 수행
-        st.write(f"가격 범위는 {min_price}원부터 {max_price}원 까지 입니다")
+        st.write(f"가격 범위는 {formatted_number(int(min_price))}원부터 {formatted_number(int(max_price))}원 까지 입니다")
 
 
     # 간격 조정
@@ -241,7 +241,7 @@ if choose == "취향대로 위스키":
     
     Result = False
     
-    if (types[selected_type] is not None) & (type(min_price) == str) & (type(max_price) == str) & (len(user_cats_list) > 0):
+    if (types[selected_type] is not None) & (type(min_price) == int) & (type(max_price) == int) & (len(user_cats_list) > 0):
         Result = True
     else:
         Result = False
@@ -317,12 +317,12 @@ if choose == "비슷한 위스키 찾기":
 
     # 입력값이 비어있지 않은 경우에만 처리
     if min_price and max_price:
-        min_price = formatted_number(int(min_price))
-        max_price = formatted_number(int(max_price))
+        min_price = int(min_price)
+        max_price = int(max_price)
 
     
     # 입력된 최소가격과 최대가격으로 필요한 처리 수행
-        st.write(f"가격 범위는 {min_price}원부터 {max_price}원 까지 입니다")
+        st.write(f"가격 범위는 {formatted_number(int(min_price))}원부터 {formatted_number(int(max_price))}원 까지 입니다")
 
     
 
@@ -338,7 +338,7 @@ if choose == "비슷한 위스키 찾기":
     
     Result = False
     
-    if (types[selected_type] is not None) & (type(min_price) == str) & (type(max_price) == str):
+    if (types[selected_type] is not None) & (type(min_price) == int) & (type(max_price) == int):
         Result = True
     else:
         Result = False
