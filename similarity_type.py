@@ -36,7 +36,9 @@ class WhiskeySimilarityChecker:
     def find_similar_shows(self, user_name, user_types, user_price, user_cats_list, top_n=3):
         # 유저 데이터 생성
         col_list = ['nameEng', 'type', 'price', 'new_elements']
-        user_record = [(user_name, user_types, user_price, user_cats_list)]
+        min_price, max_price = user_price
+        u_price = (int(min_price) + int(max_price))/2
+        user_record = [(user_name, user_types, u_price, user_cats_list)]
         user_df = pd.DataFrame(user_record, columns=col_list)
 
         # 위스키 타입과 가격조건이 맞는 데이터만 가져오고, 유저 데이터 추가
