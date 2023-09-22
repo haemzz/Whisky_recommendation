@@ -335,7 +335,7 @@ if choose == "비슷한 위스키 찾기":
     preprocessor = WhiskeySimilaritySearcher(csv_file_path)
     preprocessor.preprocessing()
 
-    show_list = ['nameKor','가격','타입','용량','도수','국가']
+    show_list = ['위스키 이름','가격','타입','용량','도수','국가']
     
     Result = False
     
@@ -362,7 +362,7 @@ if choose == "비슷한 위스키 찾기":
             user_types = [types[selected_type]]
             user_price = (min_price, max_price) # (min_price , max_price)
             similar_shows = preprocessor.find_similar_shows(whis_name, user_types, user_price, top_n=list_length)
-            similar_shows.rename(columns = {'Whisky Name': '위스키 이름','type':'타입',
+            similar_shows.rename(columns = {'nameKor': '위스키 이름','type':'타입',
                                 'price':'가격','capacity':'용량', 'country':'국가','alcohol':'도수'},inplace = True)
             
             st.write(similar_shows[show_list])
