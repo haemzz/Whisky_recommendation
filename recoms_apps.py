@@ -31,18 +31,18 @@ with st.sidebar:
 if choose == "컨텐츠":
 
     # 제목
-    image = Image.open("main_img_1.jpg")
+    image = Image.open("img/main_img_1.jpg")
     st.image(image)
     
     
     # 이미지를 불러옵니다.
-    image2 = Image.open("main_img_2.jpg")
+    image2 = Image.open("img/main_img_2.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image2)
 
     # 두 번째 이미지를 불러옵니다.
-    image3 = Image.open("main_img_3.jpg")
+    image3 = Image.open("img/main_img_3.jpg")
 
     # 두 번째 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image3)
@@ -51,7 +51,7 @@ if choose == "컨텐츠":
     st.subheader("")
 
     # 세 번째 이미지를 불러옵니다.
-    image4 = Image.open("main_img_4.jpg")
+    image4 = Image.open("img/main_img_4.jpg")
 
     # 세 번째 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image4)
@@ -60,7 +60,7 @@ if choose == "컨텐츠":
 if choose == "취향대로 위스키":
   
     # 이미지를 불러옵니다.
-    image5 = Image.open("main_img_5.jpg")
+    image5 = Image.open("img/main_img_5.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image5)
@@ -97,12 +97,12 @@ if choose == "취향대로 위스키":
     st.subheader("")
 
     # 이미지를 불러옵니다.
-    image6 = Image.open("main_img_6.jpg")
+    image6 = Image.open("img/main_img_6.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image6)
     
-    image7 = Image.open("main_img_7.jpg")
+    image7 = Image.open("img/main_img_7.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image7)
@@ -276,7 +276,7 @@ if choose == "취향대로 위스키":
 if choose == "비슷한 위스키 찾기":
   
     # 이미지를 불러옵니다.
-    image5 = Image.open("main_img_5.jpg")
+    image5 = Image.open("img/main_img_5.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image5)
