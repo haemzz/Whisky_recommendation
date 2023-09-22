@@ -45,7 +45,7 @@ class WhiskeySimilarityChecker:
         min_price, max_price = user_price
         user_shows_df = self.df[(self.df['price'] >= min_price) & (self.df['price'] <= max_price) &
                                 (self.df['type'].isin(user_types))]
-        user_shows_df = user_shows_df.append(user_df).reset_index(drop=True)
+        user_shows_df = pd.concat([user_shows_df,user_df]).reset_index(drop=True)
         user_shows_df.rename(columns = {'nameEng':'Whisky Name'},inplace = True)
 
         # 자연어처리
