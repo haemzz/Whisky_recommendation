@@ -50,11 +50,11 @@ if choose == "컨텐츠":
     # 간격 조정
     st.subheader("")
 
-    # 세 번째 이미지를 불러옵니다.
-    image4 = Image.open("img/main_img_4.jpg")
+    # # 세 번째 이미지를 불러옵니다.
+    # image4 = Image.open("img/main_img_4.jpg")
 
-    # 세 번째 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
-    st.image(image4)
+    # # 세 번째 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
+    # st.image(image4)
 
 # "Whiskey Recommend" 페이지
 if choose == "취향대로 위스키":
