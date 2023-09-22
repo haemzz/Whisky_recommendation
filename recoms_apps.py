@@ -241,7 +241,7 @@ if choose == "취향대로 위스키":
     
     Result = False
     
-    if (types[selected_type] is not None) & (type(min_price) == int) & (type(max_price) == int) & (len(user_cats_list) > 0):
+    if (types[selected_type] is not None) & (type(min_price) == str) & (type(max_price) == str) & (len(user_cats_list) > 0):
         Result = True
     else:
         Result = False
@@ -338,7 +338,7 @@ if choose == "비슷한 위스키 찾기":
     
     Result = False
     
-    if (types[selected_type] is not None) & (type(min_price) == int) & (type(max_price) == int):
+    if (types[selected_type] is not None) & (type(min_price) == str) & (type(max_price) == str):
         Result = True
     else:
         Result = False
