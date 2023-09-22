@@ -11,7 +11,9 @@ import pandas as pd
 import streamlit.components.v1 as html
 import time
 
-
+        
+def formatted_number(number):
+    return '{:,}'.format(number)
 
 # 페이지 선택을 위한 버튼을 사이드바에 추가합니다.
 with st.sidebar:
@@ -29,18 +31,18 @@ with st.sidebar:
 if choose == "컨텐츠":
 
     # 제목
-    image = Image.open("img/main_img_1.jpg")
+    image = Image.open("main_img_1.jpg")
     st.image(image)
     
     
     # 이미지를 불러옵니다.
-    image2 = Image.open("img/main_img_2.jpg")
+    image2 = Image.open("main_img_2.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image2)
 
     # 두 번째 이미지를 불러옵니다.
-    image3 = Image.open("img/main_img_3.jpg")
+    image3 = Image.open("main_img_3.jpg")
 
     # 두 번째 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image3)
@@ -49,7 +51,7 @@ if choose == "컨텐츠":
     st.subheader("")
 
     # 세 번째 이미지를 불러옵니다.
-    image4 = Image.open("img/main_img_4.jpg")
+    image4 = Image.open("main_img_4.jpg")
 
     # 세 번째 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image4)
@@ -58,7 +60,7 @@ if choose == "컨텐츠":
 if choose == "취향대로 위스키":
   
     # 이미지를 불러옵니다.
-    image5 = Image.open("img/main_img_5.jpg")
+    image5 = Image.open("main_img_5.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image5)
@@ -83,22 +85,24 @@ if choose == "취향대로 위스키":
 
     # 입력값이 비어있지 않은 경우에만 처리
     if min_price and max_price:
-        min_price = int(min_price)
-        max_price = int(max_price)
+        min_price = formatted_number(int(min_price))
+        max_price = formatted_number(int(max_price))
+
+    
     # 입력된 최소가격과 최대가격으로 필요한 처리 수행
-        st.write(f"가격 범위는 {int(min_price)}원부터 {int(max_price)}원 까지 입니다")
+        st.write(f"가격 범위는 {min_price}원부터 {max_price}원 까지 입니다")
 
 
     # 간격 조정
     st.subheader("")
 
     # 이미지를 불러옵니다.
-    image6 = Image.open("img/main_img_6.jpg")
+    image6 = Image.open("main_img_6.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image6)
     
-    image7 = Image.open("img/main_img_7.jpg")
+    image7 = Image.open("main_img_7.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image7)
@@ -226,7 +230,7 @@ if choose == "취향대로 위스키":
     # 간격 조정
     st.subheader("")
     
-    csv_file_path = r'./data/whisky_preprocessing_0922.csv'
+    csv_file_path = r'./data/whisky_preprocessing.csv'
 
     # 유사도를 위한 데이터 전처리
     preprocessor = WhiskeySimilarityChecker(csv_file_path)
@@ -272,7 +276,7 @@ if choose == "취향대로 위스키":
 if choose == "비슷한 위스키 찾기":
   
     # 이미지를 불러옵니다.
-    image5 = Image.open("img/main_img_5.jpg")
+    image5 = Image.open("main_img_5.jpg")
 
     # 이미지를 좌우로 정렬하여 페이지의 너비에 맞게 표시합니다.
     st.image(image5)
@@ -280,11 +284,14 @@ if choose == "비슷한 위스키 찾기":
      # 간격 조정
     st.subheader("")
     
-    csv_file_path = r'./data/whisky_preprocessing_0922.csv'
+    csv_file_path = r'./data/whisky_preprocessing.csv'
     
     input_whiskey = st.text_input('**취향인 위스키 이름을 검색해주세요 (영어)**: ') 
     findprocessor = WhiskeyFindProcessor(csv_file_path)
     sim_names = findprocessor.result_list(input_whiskey)
+    
+    # 간격 조정
+    st.subheader("")
     
     time.sleep(3)
     whis_name = st.selectbox("**해당하는 위스키 이름 선택**", sim_names)
@@ -310,10 +317,12 @@ if choose == "비슷한 위스키 찾기":
 
     # 입력값이 비어있지 않은 경우에만 처리
     if min_price and max_price:
-        min_price = int(min_price)
-        max_price = int(max_price)
+        min_price = formatted_number(int(min_price))
+        max_price = formatted_number(int(max_price))
+
+    
     # 입력된 최소가격과 최대가격으로 필요한 처리 수행
-        st.write(f"가격 범위는 {int(min_price)}원부터 {int(max_price)}원 까지 입니다")
+        st.write(f"가격 범위는 {min_price}원부터 {max_price}원 까지 입니다")
 
     
 
