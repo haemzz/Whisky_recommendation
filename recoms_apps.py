@@ -230,7 +230,7 @@ if choose == "취향대로 위스키":
     # 간격 조정
     st.subheader("")
     
-    csv_file_path = r'./data/whisky_preprocessing.csv'
+    csv_file_path = r'./data/whisky_preprocessing_0922.csv'
 
     # 유사도를 위한 데이터 전처리
     preprocessor = WhiskeySimilarityChecker(csv_file_path)
@@ -284,7 +284,7 @@ if choose == "비슷한 위스키 찾기":
      # 간격 조정
     st.subheader("")
     
-    csv_file_path = r'./data/whisky_preprocessing.csv'
+    # csv_file_path = r'./data/whisky_preprocessing_0922.csv'
     
     input_whiskey = st.text_input('**취향인 위스키 이름을 검색해주세요 (영어)**: ') 
     findprocessor = WhiskeyFindProcessor(csv_file_path)
